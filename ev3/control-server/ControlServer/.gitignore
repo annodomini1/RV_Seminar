@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Lego.Ev3.Desktop/bin/
+/Lego.Ev3.Desktop/obj/
+/Apps/ControlServerApp/bin/
+/Apps/ControlServerApp/obj/
+/Testers/Lego.Ev3.Tester.Console/bin/
+/Testers/Lego.Ev3.Tester.Console/obj/
