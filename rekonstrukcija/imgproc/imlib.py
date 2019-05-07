@@ -1,5 +1,5 @@
 '''
-IMLIB: knjižnica funkcij za obdelavo in analizo slik
+IMLIB: knjiznica funkcij za obdelavo in analizo slik
 
 '''
 import numpy as np
@@ -20,7 +20,7 @@ import mpl_toolkits.mplot3d as a3
 
 def loadImageRaw(iPath, iSize, iFormat):
     '''
-    Naloži sliko iz raw datoteke
+    Nalozi sliko iz raw datoteke
 
     Parameters
     ----------
@@ -45,7 +45,7 @@ def loadImageRaw(iPath, iSize, iFormat):
 
 def showImage(iImage, iTitle='', iCmap=cm.Greys_r):
     '''
-    Prikaže sliko iImage in jo naslovi z iTitle
+    Prikaze sliko iImage in jo naslovi z iTitle
 
     Parameters
     ----------
@@ -82,7 +82,7 @@ def saveImageRaw(iImage, iPath, iFormat):
     iImage : numpy.ndarray
         Vhodna slika za shranjevanje
     iPath : str
-        Pot in ime datoteke, v katero želimo sliko shraniti
+        Pot in ime datoteke, v katero zelimo sliko shraniti
     iFormat : str
         Tip podatkov v matriki slike
 
@@ -96,7 +96,7 @@ def saveImageRaw(iImage, iPath, iFormat):
 
 def loadImage(iPath):
     '''
-    Naloži sliko v standardnih formatih (bmp, jpg, png, tif, gif, idr.)
+    Nalozi sliko v standardnih formatih (bmp, jpg, png, tif, gif, idr.)
     in jo vrni kot matriko
 
     Parameters
@@ -107,7 +107,7 @@ def loadImage(iPath):
     Returns
     ----------
     oImage - numpy.ndarray
-        Vrnjena matrična predstavitev slike
+        Vrnjena matricna predstavitev slike
     '''
     oImage = np.array(im.open(iPath))
     if oImage.ndim == 3:
@@ -124,11 +124,11 @@ def saveImage(iPath, iImage, iFormat):
     Parameters
     ----------
     iPath : str
-        Pot do slike z željenim imenom slike
+        Pot do slike z zeljenim imenom slike
     iImage : numpy.ndarray
-        Matrična predstavitev slike
+        Matricna predstavitev slike
     iFormat : str
-        Željena končnica za sliko (npr. 'bmp')
+        zeljena koncnica za sliko (npr. 'bmp')
 
     Returns
     ---------
@@ -154,13 +154,13 @@ def drawLine(iImage, iValue, x1, y1, x2, y2):
             Vrednost za vrisavanje (barva daljice).
             Uporabi tuple treh elementov za barvno sliko in int za sivinsko sliko
         x1 : int
-            Začetna x koordinata daljice
+            Zacetna x koordinata daljice
         y1 : int
-            Začetna y koordinata daljice
+            Zacetna y koordinata daljice
         x2 : int
-            Končna x koordinata daljice
+            Koncna x koordinata daljice
         y2 : int
-            Končna y koordinata daljice
+            Koncna y koordinata daljice
     '''
 
     oImage = iImage
@@ -255,10 +255,10 @@ def computeHistogram(iImage, iNumBins, iRange=[], iDisplay=False, iTitle=''):
     Parameters
     ---------
     iImage : numpy.ndarray
-        Vhodna slika, katere histogram želimo izračunati
+        Vhodna slika, katere histogram zelimo izracunati
 
     iNumBins : int
-        Število predalov histograma
+        stevilo predalov histograma
 
     iRange : tuple, list
         Minimalna in maksimalna sivinska vrednost 
@@ -303,7 +303,7 @@ def computeContrast(iImages):
     Parameters
     ---------
     iImages : list of numpy.ndarray
-        Vhodne slike, na katerih želimo izračunati kontrast
+        Vhodne slike, na katerih zelimo izracunati kontrast
 
     Returns : list
         Seznam kontrastov za vsako vhodno sliko
@@ -346,7 +346,7 @@ def computeSNR(iImage1, iImage2):
     Paramters
     ---------
     iImage1, iImage2 : np.ndarray
-        Sliki področij zanimanja, med katerima računamo SNR
+        Sliki podrocij zanimanja, med katerima racunamo SNR
 
     Returns
     ---------
@@ -404,10 +404,10 @@ def windowImage(iImage, iCenter, iWidth):
         Vhodna slika
 
     iCenter : float
-        Sivinska vrednost, ki določa položaj centra okna
+        Sivinska vrednost, ki doloca polozaj centra okna
 
     iWidth : float
-        Širina okna, ki določa razpon linearno preslikavnih vrednosti
+        sirina okna, ki doloca razpon linearno preslikavnih vrednosti
 
     Returns
     --------
@@ -440,7 +440,7 @@ def thresholdImage(iImage, iThreshold):
         Vhodna slika
 
     iThreshold : float
-        Sivinska vrednost, ki določa prag
+        Sivinska vrednost, ki doloca prag
 
     Returns
     --------
@@ -736,7 +736,7 @@ def discreteGaussian2D(iSigma):
     Parameters
     ----------
     iSigma : float
-        Standardna deviacija simetričnega 2D Gaussovega jedra
+        Standardna deviacija simetricnega 2D Gaussovega jedra
 
     Returns
     --------
@@ -755,7 +755,7 @@ def discreteGaussian2D(iSigma):
 
 def interpolate0Image2D(iImage, iCoorX, iCoorY, use_builtin=True):
     '''
-    Funkcija za interpolacijo ničtega reda
+    Funkcija za interpolacijo nictega reda
 
     Parameters
     ----------
@@ -892,7 +892,7 @@ def decimateImage2D(iImage, iLevel):
         Vhodna sivinska slika
 
     iLevel : int
-        Število decimacij s faktorjem 2
+        stevilo decimacij s faktorjem 2
 
     Returns
     --------
@@ -1225,16 +1225,16 @@ def transAffine2D(iScale=(1, 1), iTrans=(0, 0), iRot=0, iShear=(0, 0)):
     Parameters
     ----------
     iScale : tuple, list
-        Skaliranje vzdolž x in y
+        Skaliranje vzdolz x in y
 
     iTrans : tuple, list
-        Translacija vzdolž x in y
+        Translacija vzdolz x in y
 
     iRot : float
         Kot rotacije
 
     iShear : tuple, list
-        Strig vzdolž x in y
+        Strig vzdolz x in y
 
     Returns
     --------
@@ -1304,7 +1304,7 @@ def addHomogCoord2D(iPts):
 
 def mapAffineInterp2D(iPtsRef, iPtsMov):
     '''
-    Afina interpolacijska poravnava na osnovi 3 pripadajočih parov točk
+    Afina interpolacijska poravnava na osnovi 3 pripadajocih parov tock
 
     Parameters
     ----------
@@ -1331,7 +1331,7 @@ def mapAffineInterp2D(iPtsRef, iPtsMov):
 
 def mapAffineApprox2D(iPtsRef, iPtsMov, iUsePseudoInv=False):
     '''
-    Afina aproksimacijska poravnava na osnovi N pripadajočih parov točk
+    Afina aproksimacijska poravnava na osnovi N pripadajocih parov tock
 
     Parameters
     ----------
@@ -1395,7 +1395,7 @@ def mapAffineApprox2D(iPtsRef, iPtsMov, iUsePseudoInv=False):
 
 def findCorrespondingPoints(iPtsRef, iPtsMov):
     '''
-    Iskanje pripadajočih parov točk kot paroma najbližje tocke
+    Iskanje pripadajocih parov tock kot paroma najblizje tocke
 
     Parameters
     ----------
@@ -1447,18 +1447,18 @@ def alignICP(iPtsRef, iPtsMov, iEps=1e-6, iMaxIter=50):
         Polje Nx2 koordinat x in y (lahko tudi v homogeni obliki)
 
     iEps : float
-        Največja absolutna razlika do homogene matrike preslikave identitete, ki zaustavi postopek
+        Najvecja absolutna razlika do homogene matrike preslikave identitete, ki zaustavi postopek
 
     iMaxIter : int
-        Maksimalno število iteracij
+        Maksimalno stevilo iteracij
 
     Returns
     --------
     oMat2D : numpy.ndarray
-        Homogena 3x3 transformacijska matrika med setoma vhodnih točk
+        Homogena 3x3 transformacijska matrika med setoma vhodnih tock
 
     oErr : list
-        Srednja Evklidska razdalja med pripadajočimi pari točk preko iteracij
+        Srednja Evklidska razdalja med pripadajocimi pari tock preko iteracij
     '''
     # inicializiraj izhodne parametre
     curMat = [];
@@ -1506,7 +1506,7 @@ def renderSurface(iCoorX, iCoorY, iCoorZ, iTitle='', nSamples=2000):
         Naslov prikaznega okna
 
     nSamples : int
-        Število točk za ustvarjanje trikotniške mreže
+        stevilo tock za ustvarjanje trikotniske mreze
 
     Returns
     --------
